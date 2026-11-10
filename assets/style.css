@@ -1,0 +1,191 @@
+:root {
+  --bg: #E6E6E6;
+  --papel: #FFFFFF;
+  --tinta: #1F1F1F;
+  --tinta-suave: #6B6B6B;
+  --acento: #3A3A3A;
+  --acento-escuro: #1A1A1A;
+  --linha: #D0D0D0;
+
+  --fonte-titulo: 'Newsreader', Georgia, serif;
+  --fonte-texto: 'Inter', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+}
+
+.cartao {
+  width: 100%;
+  max-width: 440px;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  padding: 32px 28px;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin: 0 0 8px;
+}
+
+.subtitulo {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--tinta-suave);
+  margin: 0 0 24px;
+  max-width: 34ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visor {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #111111;
+}
+
+#camera {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.canto {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  z-index: 2;
+}
+
+.canto-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.canto-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+.canto-bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+.canto-br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+.botoes {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--acento-escuro);
+  outline-offset: 3px;
+}
+
+.btn-primario {
+  background: var(--acento);
+  color: #F5F5F5;
+}
+
+.btn-primario:hover {
+  background: var(--acento-escuro);
+}
+
+.btn-secundario {
+  background: transparent;
+  color: var(--tinta-suave);
+  border: 1px solid var(--linha);
+}
+
+.btn-secundario:hover {
+  color: var(--tinta);
+  border-color: var(--tinta-suave);
+}
+
+/* Modal da foto  */
+
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 10;
+}
+
+.modal-conteudo {
+  width: 100%;
+  max-width: 420px;
+  background: var(--papel);
+  border-radius: 14px;
+  padding: 20px 20px 22px;
+  text-align: center;
+  box-shadow: 0 24px 48px rgba(17, 17, 17, 0.35);
+}
+
+.modal-legenda {
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--tinta-suave);
+  margin: 0 0 12px;
+}
+
+.foto-moldura {
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 18px;
+}
+
+.modal-conteudo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #111111;
+}
+
+.escondido {
+  display: none;
+}
+
+#mensagem {
+  margin: 16px 0 0;
+  min-height: 1.1em;
+  font-size: 0.85rem;
+  color: var(--acento-escuro);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}

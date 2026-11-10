@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tirar Foto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <main class="cartao">
+    <h1>Tirar foto</h1>
+    <p class="subtitulo">A câmera liga automaticamente. Quando estiver pronto, capture o quadro.</p>
+
+    <div class="visor">
+      <span class="canto canto-tl"></span>
+      <span class="canto canto-tr"></span>
+      <span class="canto canto-bl"></span>
+      <span class="canto canto-br"></span>
+
+      <div id="camera"></div>
+    </div>
+
+    <div class="botoes">
+      <button id="btnTirarFoto" class="btn btn-primario">Tirar foto</button>
+    </div>
+
+    <p id="mensagem"></p>
+  </main>
+
+
+  <div id="modalFoto" class="modal-fundo escondido">
+    <div class="modal-conteudo">
+      <p class="modal-legenda">Foto capturada</p>
+      <div class="foto-moldura">
+        <img id="foto">
+      </div>
+      <button id="btnFecharModal" class="btn btn-secundario">Tirar outra foto</button>
+    </div>
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>
